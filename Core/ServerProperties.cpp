@@ -79,6 +79,7 @@ bool ServerProperties::load(const wstring& path)
     difficulty = getInt(L"difficulty", 2);
     maxPlayers = getInt(L"max-players", 8);
     if (maxPlayers < 1) maxPlayers = 1;
+    if (maxPlayers > 32) maxPlayers = 32;
     pvp = getBool(L"pvp", true);
     trustPlayers = getBool(L"trust-players", true);
     fireSpreads = getBool(L"fire-spreads", true);

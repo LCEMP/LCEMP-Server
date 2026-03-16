@@ -64,6 +64,9 @@ bool DedicatedServer::init()
     extern bool g_ServerAdvertiseLAN;
     g_ServerAdvertiseLAN = m_properties.advertiseLan;
 
+    extern int g_ServerMaxPlayers;
+    g_ServerMaxPlayers = m_properties.maxPlayers;
+
     extern char g_ServerBindAddress[256];
     if (!m_properties.serverIp.empty())
     {

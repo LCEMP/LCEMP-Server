@@ -25,7 +25,7 @@ typedef int SOCKET;
 inline int closesocket(SOCKET s) { return close(s); }
 
 #define WIN64_NET_DEFAULT_PORT       25565
-#define WIN64_NET_MAX_CLIENTS        7
+#define WIN64_NET_MAX_CLIENTS        31
 #define WIN64_NET_RECV_BUFFER_SIZE   65536
 #define WIN64_NET_MAX_PACKET_SIZE    (3 * 1024 * 1024)
 #define WIN64_LAN_DISCOVERY_PORT     25566
