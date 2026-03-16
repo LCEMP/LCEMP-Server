@@ -123,7 +123,7 @@ bool DedicatedServer::init()
 
     g_NetworkManager.Initialise();
 
-    for (int i = 0; i < MINECRAFT_NET_MAX_PLAYERS; i++)
+    for (int i = 0; i < g_ServerMaxPlayers; i++)
     {
         IQNet::m_player[i].m_smallId = (BYTE)i;
         IQNet::m_player[i].m_isRemote = false;
