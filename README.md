@@ -1,7 +1,7 @@
 # LCEMP Dedicated Server
 
 A dedicated server for Legacy Console Edition. This allows you to host a standalone server for LCE.
-Supports a maximum of 32 players and Voice Chat. (max 8 players on voice chatfor now)
+Supports a maximum of 32 players and Voice Chat. (max 8 players on voice chat for now)
 
 ## Building
 
