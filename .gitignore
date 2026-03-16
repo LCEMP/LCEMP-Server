@@ -16,3 +16,5 @@ ipch/
 *.suo
 *.sln
 server.properties
+MinecraftDedicatedServer.exe
+MinecraftDedicatedServer
