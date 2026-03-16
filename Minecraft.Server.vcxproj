@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug-Linux|x64">
+      <Configuration>Debug-Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release-Linux|x64">
+      <Configuration>Release-Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <ProjectGuid>{12A22166-696D-402E-A1B8-806F46567BF2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MinecraftServer</RootNamespace>
+    <ProjectName>Minecraft.Server</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x64_Server_Debug\</OutDir>
+    <IntDir>x64_Server_Debug\</IntDir>
+    <IncludePath>$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)x64_Server_Release\</OutDir>
+    <IntDir>x64_Server_Release\</IntDir>
+    <IncludePath>$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">
+    <OutDir>$(SolutionDir)Linux_Server_Debug\</OutDir>
+    <IntDir>Linux_Server_Debug\</IntDir>
+    <NMakeBuildCommandLine>"$(ProjectDir)Linux\build.bat" Debug</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)Linux\build.bat" Clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)Linux\build.bat" Rebuild-Debug</NMakeReBuildCommandLine>
+    <NMakeOutput>$(SolutionDir)build_linux\MinecraftDedicatedServer</NMakeOutput>
+    <NMakePreprocessorDefinitions>__linux__;_DEDICATED_SERVER;_CONTENT_PACKAGE;_LARGE_WORLDS;_WINDOWS64;WITH_SERVER_CODE;_CRT_NON_CONFORMING_SWPRINTFS;_CRT_SECURE_NO_WARNINGS</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)Linux;$(ProjectDir)Linux\stubs;$(ProjectDir);$(ProjectDir)\..\Minecraft.Client;$(ProjectDir)\..\Minecraft.World;$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Windows64\Iggy\include;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include</NMakeIncludeSearchPath>
+    <AdditionalOptions>-std=c++11</AdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'">
+    <OutDir>$(SolutionDir)Linux_Server_Release\</OutDir>
+    <IntDir>Linux_Server_Release\</IntDir>
+    <NMakeBuildCommandLine>"$(ProjectDir)Linux\build.bat" Release</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)Linux\build.bat" Clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)Linux\build.bat" Rebuild-Release</NMakeReBuildCommandLine>
+    <NMakeOutput>$(SolutionDir)build_linux\MinecraftDedicatedServer</NMakeOutput>
+    <NMakePreprocessorDefinitions>__linux__;_DEDICATED_SERVER;_CONTENT_PACKAGE;_LARGE_WORLDS;_WINDOWS64;WITH_SERVER_CODE;_CRT_NON_CONFORMING_SWPRINTFS;_CRT_SECURE_NO_WARNINGS</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)Linux;$(ProjectDir)Linux\stubs;$(ProjectDir);$(ProjectDir)\..\Minecraft.Client;$(ProjectDir)\..\Minecraft.World;$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Windows64\Iggy\include;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include</NMakeIncludeSearchPath>
+    <AdditionalOptions>-std=c++11</AdditionalOptions>
+  </PropertyGroup>  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_DEDICATED_SERVER;_CONTENT_PACKAGE;WITH_SERVER_CODE;_LARGE_WORLDS;_DEBUG_MENUS_ENABLED;_DEBUG;_CRT_NON_CONFORMING_SWPRINTFS;_CRT_SECURE_NO_WARNINGS;_WINDOWS64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\Minecraft.Client;$(ProjectDir)\..\Minecraft.Client\Windows64\Iggy\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;..\Minecraft.World\x64_Debug\Minecraft.World.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Storage_d.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Profile_d.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Render_PC_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_DEDICATED_SERVER;_CONTENT_PACKAGE;WITH_SERVER_CODE;_LARGE_WORLDS;_CRT_NON_CONFORMING_SWPRINTFS;_CRT_SECURE_NO_WARNINGS;_WINDOWS64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\Minecraft.Client;$(ProjectDir)\..\Minecraft.Client\Windows64\Iggy\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ShowIncludes>false</ShowIncludes>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;..\Minecraft.World\x64_Release\Minecraft.World.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Storage.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Profile_r.lib;..\Minecraft.Client\Windows64\4JLibs\libs\4J_Render_PC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Core\DedicatedServer.h" />
+    <ClInclude Include="Core\ServerProperties.h" />
+    <ClInclude Include="Commands\ServerCommands.h" />
+    <ClInclude Include="Commands\ServerCommand.h" />
+    <ClInclude Include="Commands\ConsoleCommandDispatcher.h" />
+    <ClInclude Include="Commands\StopCommand.h" />
+    <ClInclude Include="Commands\HelpCommand.h" />
+    <ClInclude Include="Commands\TpCommand.h" />
+    <ClInclude Include="Commands\ConsoleCommandSender.h" />
+    <ClInclude Include="Commands\TimeServerCommand.h" />
+    <ClInclude Include="Commands\ToggleDownfallServerCommand.h" />
+    <ClInclude Include="Commands\GiveServerCommand.h" />
+    <ClInclude Include="Commands\EnchantServerCommand.h" />
+    <ClInclude Include="Commands\KillServerCommand.h" />
+    <ClInclude Include="Commands\GameModeServerCommand.h" />
+    <ClInclude Include="Commands\ListServerCommand.h" />
+    <ClInclude Include="Commands\KickServerCommand.h" />
+    <ClInclude Include="Linux\LinuxCompat.h" />
+    <ClInclude Include="Linux\LinuxStdafx.h" />
+    <ClInclude Include="Linux\PosixNetLayer.h" />
+    <ClInclude Include="Linux\WinsockNetLayer.h" />
+    <ClInclude Include="Commands\BanCommand.h" />
+    <ClInclude Include="Commands\BanIpCommand.h" />
+    <ClInclude Include="Commands\BanListCommand.h" />
+    <ClInclude Include="Commands\DebugCommand.h" />
+    <ClInclude Include="Commands\DefaultGameModeCommand.h" />
+    <ClInclude Include="Commands\DeOpCommand.h" />
+    <ClInclude Include="Commands\MeCommand.h" />
+    <ClInclude Include="Commands\OpCommand.h" />
+    <ClInclude Include="Commands\PardonCommand.h" />
+    <ClInclude Include="Commands\PardonIpCommand.h" />
+    <ClInclude Include="Commands\SaveAllCommand.h" />
+    <ClInclude Include="Commands\SaveOffCommand.h" />
+    <ClInclude Include="Commands\SaveOnCommand.h" />
+    <ClInclude Include="Commands\SayCommand.h" />
+    <ClInclude Include="Commands\SeedCommand.h" />
+    <ClInclude Include="Commands\ServerTextList.h" />
+    <ClInclude Include="Commands\WhitelistCommand.h" />
+    <ClInclude Include="Commands\XpCommand.h" />
+    <ClInclude Include="Core\ServerLists.h" />
+    <ClInclude Include="Core\ServerLogger.h" />
+    <ClInclude Include="Linux\stubs\d3d11.h" />
+    <ClInclude Include="Linux\stubs\DirectXMath.h" />
+    <ClInclude Include="Linux\stubs\malloc.h" />
+    <ClInclude Include="Linux\stubs\sal.h" />
+    <ClInclude Include="Linux\stubs\tchar.h" />
+    <ClInclude Include="Linux\stubs\windows.h" />
+    <ClInclude Include="Linux\stubs\WinSock2.h" />
+    <ClInclude Include="Linux\stubs\WS2tcpip.h" />
+    <ClInclude Include="Linux\stubs\xhash" />
+    <ClInclude Include="Linux\stubs\xsocialpost.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Core\DedicatedServer_Main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Core\DedicatedServer.cpp" />
+    <ClCompile Include="Core\ServerProperties.cpp" />
+    <ClCompile Include="Stubs\ServerStubs.cpp" />
+    <ClCompile Include="Stubs\ServerStubs2.cpp" />
+    <ClCompile Include="Commands\ServerCommands.cpp" />
+    <ClCompile Include="Commands\ConsoleCommandDispatcher.cpp" />
+    <ClCompile Include="Commands\StopCommand.cpp" />
+    <ClCompile Include="Commands\HelpCommand.cpp" />
+    <ClCompile Include="Commands\TpCommand.cpp" />
+    <ClCompile Include="Commands\ConsoleCommandSender.cpp" />
+    <ClCompile Include="Commands\TimeServerCommand.cpp" />
+    <ClCompile Include="Commands\ToggleDownfallServerCommand.cpp" />
+    <ClCompile Include="Commands\GiveServerCommand.cpp" />
+    <ClCompile Include="Commands\EnchantServerCommand.cpp" />
+    <ClCompile Include="Commands\KillServerCommand.cpp" />
+    <ClCompile Include="Commands\GameModeServerCommand.cpp" />
+    <ClCompile Include="Commands\ListServerCommand.cpp" />
+    <ClCompile Include="Commands\KickServerCommand.cpp" />
+    <ClCompile Include="Commands\BanCommand.cpp" />
+    <ClCompile Include="Commands\BanIpCommand.cpp" />
+    <ClCompile Include="Commands\BanListCommand.cpp" />
+    <ClCompile Include="Commands\DebugCommand.cpp" />
+    <ClCompile Include="Commands\DefaultGameModeCommand.cpp" />
+    <ClCompile Include="Commands\DeOpCommand.cpp" />
+    <ClCompile Include="Commands\MeCommand.cpp" />
+    <ClCompile Include="Commands\OpCommand.cpp" />
+    <ClCompile Include="Commands\PardonCommand.cpp" />
+    <ClCompile Include="Commands\PardonIpCommand.cpp" />
+    <ClCompile Include="Commands\SaveAllCommand.cpp" />
+    <ClCompile Include="Commands\SaveOffCommand.cpp" />
+    <ClCompile Include="Commands\SaveOnCommand.cpp" />
+    <ClCompile Include="Commands\SayCommand.cpp" />
+    <ClCompile Include="Commands\SeedCommand.cpp" />
+    <ClCompile Include="Commands\WhitelistCommand.cpp" />
+    <ClCompile Include="Commands\XpCommand.cpp" />
+    <ClCompile Include="Core\ServerLists.cpp" />
+    <ClCompile Include="Core\ServerLogger.cpp" />
+    <ClCompile Include="Stubs\ServerStubs3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Minecraft.Client\MinecraftServer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerConnection.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerLevel.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerLevelListener.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerPlayer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerPlayerGameMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerChunkCache.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ServerCommandDispatcher.cpp" />
+    <ClCompile Include="..\Minecraft.Client\DerivedServerLevel.cpp" />
+    <ClCompile Include="..\Minecraft.Client\PlayerList.cpp" />
+    <ClCompile Include="..\Minecraft.Client\PlayerConnection.cpp" />
+    <ClCompile Include="..\Minecraft.Client\PendingConnection.cpp" />
+    <ClCompile Include="..\Minecraft.Client\PlayerChunkMap.cpp" />
+    <ClCompile Include="..\Minecraft.Client\EntityTracker.cpp" />
+    <ClCompile Include="..\Minecraft.Client\TrackedEntity.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ConsoleInput.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Settings.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Options.cpp" />
+    <ClCompile Include="..\Minecraft.Client\User.cpp" />
+    <ClCompile Include="..\Minecraft.Client\StatsCounter.cpp" />
+    <ClCompile Include="..\Minecraft.Client\StatsSyncher.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Minecraft.cpp" />
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerLevel.cpp" />
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerLocalPlayer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerChunkCache.cpp" />
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerGameMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\LocalPlayer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\RemotePlayer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ClientConnection.cpp" />
+    <ClCompile Include="..\Minecraft.Client\ClientConstants.cpp" />
+    <ClCompile Include="..\Minecraft.Client\TeleportCommand.cpp" />
+    <ClCompile Include="..\Minecraft.Client\StringTable.cpp" />
+    <ClCompile Include="..\Minecraft.Client\WstringLookup.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Minimap.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MemoryTracker.cpp" />
+    <ClCompile Include="..\Minecraft.Client\crt_compat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Consoles_App.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\ConsoleGameMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Console_Utils.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Network\GameNetworkManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Network\PlatformNetworkManagerStub.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Telemetry\TelemetryManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Trial\TrialMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Leaderboards\LeaderboardManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCPack.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCTextureFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCLocalisationFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCGameRulesFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCGameRulesHeader.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCAudioFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCCapeFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCSkinFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCColourTableFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCUIDataFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\SoundEngine.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\Consoles_SoundEngine.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\SoundNames.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Colours\ColourTable.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRule.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRuleManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelGenerationOptions.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelGenerators.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelRules.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelRuleset.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\BiomeOverride.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\StartFeature.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ConsoleGenerateStructure.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ConsoleSchematicFile.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\AddEnchantmentRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\AddItemRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ApplySchematicRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CollectItemRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CompleteAllRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CompoundGameRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\NamedAreaRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\UpdatePlayerRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\UseTileRuleDefinition.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionGenerateBox.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceBlock.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceContainer.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceSpawner.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\Tutorial.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorial.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorialActiveTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorialMode.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialMessage.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaConstraint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ChangeStateConstraint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ChoiceTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\CompleteUsingItemTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ControllerTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\CraftTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\DiggerItemHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\EffectChangedTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\InfoTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\InputConstraint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\LookAtEntityHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\LookAtTileHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\PickupTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ProcedureCompoundTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ProgressFlagTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\StatTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TakeItemHint.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\UseItemTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\UseTileTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\XuiCraftingTask.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIScene.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIScene_PauseMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UILayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIGroup.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIControl_Base.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIFontData.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIBitmapFont.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UITTFFont.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_StartGame.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_PauseMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_AbstractContainerMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_ContainerMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_CraftingMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_CreativeMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_FurnaceMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_InventoryMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_BrewingMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_DispenserMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_EnchantingMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_AnvilMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_TradingMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\adler32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\compress.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\crc32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\deflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzclose.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzread.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzwrite.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\infback.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inffast.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inftrees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\trees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\uncompr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\zutil.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Windows64_App.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Network\WinsockNetLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Leaderboards\WindowsLeaderboardManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Windows64\Windows64_UIController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Xbox\Network\NetworkPlayerXbox.cpp" />
+    <ClCompile Include="..\Minecraft.Client\Extrax64Stubs.cpp" />
+    <ClCompile Include="..\Minecraft.Client\KeyboardMouseInput.cpp" />
+    <ClCompile Include="..\Minecraft.Client\PS3\PS3Extras\ShutdownManager.cpp" />
+    <ClCompile Include="..\Minecraft.Client\CreativeMode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Linux\LinuxMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Linux\PosixNetLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

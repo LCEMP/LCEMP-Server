@@ -1,0 +1,37 @@
+#pragma once
+
+struct ID3D11Device;
+struct ID3D11DeviceContext;
+struct ID3D11RenderTargetView;
+struct ID3D11DepthStencilView;
+struct ID3D11ShaderResourceView;
+struct ID3D11Buffer;
+struct ID3D11Texture2D;
+struct IDXGISwapChain;
+
+typedef struct D3D11_RECT {
+	long left;
+	long top;
+	long right;
+	long bottom;
+} D3D11_RECT;
+
+enum {
+	D3D11_BLEND_ZERO = 1,
+	D3D11_BLEND_ONE = 2,
+	D3D11_BLEND_SRC_ALPHA = 3,
+	D3D11_BLEND_INV_SRC_ALPHA = 4,
+	D3D11_BLEND_DEST_ALPHA = 5,
+	D3D11_BLEND_SRC_COLOR = 6,
+	D3D11_BLEND_DEST_COLOR = 7,
+	D3D11_BLEND_INV_DEST_COLOR = 8,
+	D3D11_BLEND_INV_SRC_COLOR = 9,
+	D3D11_BLEND_BLEND_FACTOR = 10,
+	D3D11_BLEND_INV_BLEND_FACTOR = 11,
+
+	D3D11_COMPARISON_LESS_EQUAL = 20,
+	D3D11_COMPARISON_EQUAL = 21,
+	D3D11_COMPARISON_GREATER = 22,
+	D3D11_COMPARISON_GREATER_EQUAL = 23,
+	D3D11_COMPARISON_ALWAYS = 24
+};

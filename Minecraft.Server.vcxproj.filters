@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Server">
+      <UniqueIdentifier>{F4549051-0176-4AC3-91C4-626AC6AE3E45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{7DDBBB6C-E16F-4CF0-A8C4-588ED0B6DC71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameRules">
+      <UniqueIdentifier>{5823EB64-6F69-48EA-8D46-81FFA7F276FC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tutorial">
+      <UniqueIdentifier>{9270DB82-A155-43C0-9D54-455417E97748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{EC39CF82-06DB-4BC5-9C80-F39B60E048ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DLC">
+      <UniqueIdentifier>{02CFBE7F-6A35-4620-B804-3D612385ACD0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\zlib">
+      <UniqueIdentifier>{4D352E32-7D20-4EB2-9BDA-89E7AD5E9772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Platform">
+      <UniqueIdentifier>{F595EFE2-4D31-425B-B58D-C0E06402A8EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{916A333F-37B9-4310-9F8D-9AB833A0C913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{6ABCD7BC-D2D7-40D8-905F-72F86DCD1FD3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Stubs">
+      <UniqueIdentifier>{58EC24F6-30EF-425A-87AF-CFF8CAFA7037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{897BAA49-1C89-435F-A2C5-970920F9CC4F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{D2A911EF-1245-48F7-BD3E-3B336558008F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Linux">
+      <UniqueIdentifier>{F20822ED-AC55-413F-95E8-BCD9DCE43455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Linux\stubs">
+      <UniqueIdentifier>{1126E4C0-31CF-4D9C-B5EF-A953541C9A7F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linux">
+      <UniqueIdentifier>{12B0324F-F606-40EF-9806-4CD453D2BFF3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DedicatedServer.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ServerProperties.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ServerCommands.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ConsoleCommandDispatcher.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ConsoleCommandSender.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\StopCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\HelpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\TpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\TimeServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ToggleDownfallServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\GiveServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\EnchantServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\KillServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\GameModeServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ListServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\KickServerCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BanCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BanIpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\BanListCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\DebugCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\DefaultGameModeCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\DeOpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\MeCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\OpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\PardonCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\PardonIpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SaveAllCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SaveOffCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SaveOnCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SayCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SeedCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ServerTextList.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\WhitelistCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\XpCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ServerLists.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ServerLogger.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\LinuxCompat.h">
+      <Filter>Header Files\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\LinuxStdafx.h">
+      <Filter>Header Files\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\PosixNetLayer.h">
+      <Filter>Header Files\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\WinsockNetLayer.h">
+      <Filter>Header Files\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\d3d11.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\DirectXMath.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\malloc.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\sal.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\tchar.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\windows.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\WinSock2.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\WS2tcpip.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\xhash">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Linux\stubs\xsocialpost.h">
+      <Filter>Header Files\Linux\stubs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DedicatedServer_Main.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DedicatedServer.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ServerProperties.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Stubs\ServerStubs.cpp">
+      <Filter>Source Files\Stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="Stubs\ServerStubs2.cpp">
+      <Filter>Source Files\Stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\ServerCommands.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\ConsoleCommandDispatcher.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\ConsoleCommandSender.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\StopCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\HelpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\TpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\TimeServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\ToggleDownfallServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\GiveServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\EnchantServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\KillServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\GameModeServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\ListServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\KickServerCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BanCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BanIpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\BanListCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\DebugCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\DefaultGameModeCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\DeOpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\MeCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\OpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\PardonCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\PardonIpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SaveAllCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SaveOffCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SaveOnCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SayCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SeedCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\WhitelistCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\XpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ServerLists.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ServerLogger.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Stubs\ServerStubs3.cpp">
+      <Filter>Source Files\Stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MinecraftServer.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerConnection.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerLevel.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerLevelListener.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerPlayer.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerPlayerGameMode.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerChunkCache.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ServerCommandDispatcher.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\DerivedServerLevel.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\PlayerList.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\PlayerConnection.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\PendingConnection.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\PlayerChunkMap.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\EntityTracker.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\TrackedEntity.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ConsoleInput.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Settings.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Options.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\User.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\StatsCounter.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\StatsSyncher.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Minecraft.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerLevel.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerLocalPlayer.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerChunkCache.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MultiPlayerGameMode.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\LocalPlayer.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\RemotePlayer.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ClientConnection.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\ClientConstants.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\TeleportCommand.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\StringTable.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\WstringLookup.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Minimap.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\MemoryTracker.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\crt_compat.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\CreativeMode.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Consoles_App.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\ConsoleGameMode.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Console_Utils.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Network\GameNetworkManager.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Network\PlatformNetworkManagerStub.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Telemetry\TelemetryManager.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Trial\TrialMode.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Leaderboards\LeaderboardManager.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\SoundEngine.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\Consoles_SoundEngine.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Audio\SoundNames.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Colours\ColourTable.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCManager.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCPack.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCTextureFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCLocalisationFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCGameRulesFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCGameRulesHeader.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCAudioFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCCapeFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCSkinFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCColourTableFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\DLC\DLCUIDataFile.cpp">
+      <Filter>Source Files\DLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRule.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\GameRuleManager.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelGenerationOptions.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelGenerators.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelRules.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\LevelRuleset.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\BiomeOverride.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\StartFeature.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ConsoleGenerateStructure.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ConsoleSchematicFile.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\AddEnchantmentRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\AddItemRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\ApplySchematicRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CollectItemRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CompleteAllRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\CompoundGameRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\NamedAreaRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\UpdatePlayerRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\UseTileRuleDefinition.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionGenerateBox.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceBlock.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceContainer.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\GameRules\XboxStructureActionPlaceSpawner.cpp">
+      <Filter>Source Files\GameRules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\Tutorial.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialMode.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorial.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorialActiveTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\FullTutorialMode.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialMessage.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TutorialTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaConstraint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\AreaTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ChangeStateConstraint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ChoiceTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\CompleteUsingItemTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ControllerTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\CraftTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\DiggerItemHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\EffectChangedTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\InfoTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\InputConstraint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\LookAtEntityHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\LookAtTileHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\PickupTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ProcedureCompoundTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\ProgressFlagTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\StatTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\TakeItemHint.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\UseItemTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\UseTileTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\Tutorial\XuiCraftingTask.cpp">
+      <Filter>Source Files\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIController.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIScene.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIScene_PauseMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UILayer.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIGroup.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIControl.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIControl_Base.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIFontData.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UIBitmapFont.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\UITTFFont.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_StartGame.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_PauseMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_AbstractContainerMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_ContainerMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_CraftingMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_CreativeMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_FurnaceMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_InventoryMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_BrewingMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_DispenserMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_EnchantingMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_AnvilMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\UI\IUIScene_TradingMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\adler32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\compress.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\crc32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\deflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzclose.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzlib.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzread.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\gzwrite.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\infback.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inffast.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\inftrees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\trees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\uncompr.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Common\zlib\zutil.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Windows64_App.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Network\WinsockNetLayer.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Leaderboards\WindowsLeaderboardManager.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Windows64\Windows64_UIController.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Xbox\Network\NetworkPlayerXbox.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Extrax64Stubs.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\KeyboardMouseInput.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\PS3\PS3Extras\ShutdownManager.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\CreativeMode.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Linux\LinuxMain.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="Linux\PosixNetLayer.cpp">
+      <Filter>Source Files\Linux</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
