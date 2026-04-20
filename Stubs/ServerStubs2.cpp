@@ -2,6 +2,7 @@
 #include "stdafx.h"
 
 #include "../../Minecraft.World/Dimension.h"
+#include "../../Minecraft.World/ChunkSource.h"
 #include "../../Minecraft.Client/Windows64/4JLibs/inc/4J_Input.h"
 #include "../../Minecraft.Client/Windows64/4JLibs/inc/4J_Storage.h"
 #include "../../Minecraft.Client/TexturePackRepository.h"

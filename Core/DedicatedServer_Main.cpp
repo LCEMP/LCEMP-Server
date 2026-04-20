@@ -105,6 +105,20 @@ int wmain(int argc, wchar_t *argv[])
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     SetConsoleTitleW(L"LCEMP Server");
+
+    HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
+    if (hInput != INVALID_HANDLE_VALUE)
+    {
+        DWORD mode = 0;
+        if (GetConsoleMode(hInput, &mode))
+        {
+            mode |= ENABLE_EXTENDED_FLAGS;
+            mode &= ~ENABLE_QUICK_EDIT_MODE;
+            mode &= ~ENABLE_MOUSE_INPUT;
+            SetConsoleMode(hInput, mode);
+        }
+    }
+
     ServerLog_Init();
 
     ServerLog(L"Starting Minecraft LCE server version %s (protocol %d)\n", VER_FILEVERSION_STR_W, SharedConstants::NETWORK_PROTOCOL_VERSION);

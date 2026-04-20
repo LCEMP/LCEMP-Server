@@ -36,6 +36,7 @@ public:
     wstring motd;
     bool whiteList;
     bool voiceChat;
+    bool chatEnabled;
     wstring levelSize;
     bool advertiseLan;
     wstring serverIp;

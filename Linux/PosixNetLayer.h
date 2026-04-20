@@ -12,9 +12,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <poll.h>
+#include <sys/epoll.h>
 #include <vector>
 #include <pthread.h>
 #include <cstring>
+#include <atomic>
 
 #include "../../Minecraft.Client/Common/Network/NetworkPlayerInterface.h"
 
@@ -25,12 +27,14 @@ typedef int SOCKET;
 inline int closesocket(SOCKET s) { return close(s); }
 
 #define WIN64_NET_DEFAULT_PORT       25565
-#define WIN64_NET_MAX_CLIENTS        31
-#define WIN64_NET_RECV_BUFFER_SIZE   65536
+#define WIN64_NET_RECV_BUFFER_SIZE   131072
 #define WIN64_NET_MAX_PACKET_SIZE    (3 * 1024 * 1024)
 #define WIN64_LAN_DISCOVERY_PORT     25566
 #define WIN64_LAN_BROADCAST_MAGIC    0x4D434C4E
 #define WIN64_LAN_BROADCAST_PLAYERS  8
+#define WIN64_NET_IO_THREADS         2
+#define WIN64_NET_EPOLL_MAX_EVENTS   64
+#define WIN64_NET_SEND_BUFFER_SIZE   262144
 
 class Socket;
 
@@ -73,10 +77,19 @@ struct Win64RemoteConnection
 {
     SOCKET tcpSocket;
     uint8_t smallId;
-    pthread_t recvThread;
-    bool recvThreadActive;
     volatile bool active;
     pthread_mutex_t sendLock;
+
+    uint8_t *recvBuffer;
+    int recvBufferUsed;
+    int recvBufferSize;
+    int currentPacketSize;
+    bool readingHeader;
+
+    uint8_t *sendBuffer;
+    int sendBufferUsed;
+    int sendBufferSize;
+    pthread_mutex_t sendBufLock;
 };
 
 class WinsockNetLayer
@@ -87,6 +100,11 @@ public:
 
     static bool HostGame(int port);
     static bool JoinGame(const char *ip, int port);
+
+    enum JoinResult { JOIN_IN_PROGRESS, JOIN_SUCCESS, JOIN_FAILED };
+    static bool BeginJoinGame(const char *ip, int port);
+    static JoinResult PollJoinResult();
+    static void CancelJoinGame();
 
     static bool SendToSmallId(uint8_t targetSmallId, const void *data, int dataSize);
     static bool SendOnSocket(SOCKET sock, const void *data, int dataSize);
@@ -117,6 +135,7 @@ public:
     static void UpdateAdvertisePlayerCount(uint8_t count);
     static void UpdateAdvertiseJoinable(bool joinable);
     static void UpdateAdvertisePlayerNames(uint8_t count, const char playerNames[][32]);
+        static void UpdateAdvertiseGameHostSettings(unsigned int settings);
 
     static bool StartDiscovery();
     static void StopDiscovery();
@@ -124,12 +143,17 @@ public:
 
     static int GetHostPort() { return s_hostGamePort; }
 
+    static void FlushSendBuffers();
+
 private:
+    static size_t GetConnectionSlotCount();
     static void* AcceptThreadProc(void* param);
-    static void* RecvThreadProc(void* param);
+    static void* EpollThreadProc(void* param);
     static void* ClientRecvThreadProc(void* param);
     static void* AdvertiseThreadProc(void* param);
     static void* DiscoveryThreadProc(void* param);
+    static void* AsyncJoinThreadProc(void* param);
+    static bool ProcessRecvData(Win64RemoteConnection &conn);
 
     static SOCKET s_listenSocket;
     static SOCKET s_hostConnectionSocket;
@@ -138,6 +162,10 @@ private:
     static pthread_t s_clientRecvThread;
     static bool s_clientRecvThreadActive;
 
+    static int s_epollFd;
+    static pthread_t s_epollThreads[WIN64_NET_IO_THREADS];
+    static bool s_epollThreadsActive;
+
     static bool s_isHost;
     static bool s_connected;
     static bool s_active;
@@ -145,12 +173,12 @@ private:
 
     static uint8_t s_localSmallId;
     static uint8_t s_hostSmallId;
-    static uint8_t s_nextSmallId;
+    static std::atomic<uint8_t> s_nextSmallId;
 
     static pthread_mutex_t s_sendLock;
     static pthread_mutex_t s_connectionsLock;
 
-    static Win64RemoteConnection s_connections[WIN64_NET_MAX_CLIENTS + 1];
+    static std::vector<Win64RemoteConnection> s_connections;
 
     static SOCKET s_advertiseSock;
     static pthread_t s_advertiseThread;
@@ -161,6 +189,7 @@ private:
     static int s_hostGamePort;
 
     static SOCKET s_discoverySock;
+    static SOCKET s_discoveryLegacySock;
     static pthread_t s_discoveryThread;
     static bool s_discoveryThreadActive;
     static volatile bool s_discovering;
@@ -177,7 +206,14 @@ private:
     static std::vector<uint8_t> s_freeSmallIds;
 
     static pthread_mutex_t s_earlyDataLock;
-    static std::vector<uint8_t> s_earlyDataBuffers[WIN64_NET_MAX_CLIENTS + 1];
+    static std::vector<std::vector<uint8_t> > s_earlyDataBuffers;
+
+    static pthread_t s_asyncJoinThread;
+    static bool s_asyncJoinThreadActive;
+    static volatile JoinResult s_asyncJoinResult;
+    static volatile bool s_asyncJoinActive;
+    static char s_asyncJoinIP[256];
+    static int s_asyncJoinPort;
 };
 
 extern bool g_Win64MultiplayerHost;

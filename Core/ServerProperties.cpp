@@ -29,6 +29,7 @@ void ServerProperties::loadDefaults()
     motd = L"A Minecraft LCE Server";
     whiteList = false;
     voiceChat = false;
+    chatEnabled = false;
     levelSize = L"large";
     advertiseLan = true;
     serverIp = L"";
@@ -79,7 +80,7 @@ bool ServerProperties::load(const wstring& path)
     difficulty = getInt(L"difficulty", 2);
     maxPlayers = getInt(L"max-players", 8);
     if (maxPlayers < 1) maxPlayers = 1;
-    if (maxPlayers > 32) maxPlayers = 32;
+    if (maxPlayers > 255) maxPlayers = 255;
     pvp = getBool(L"pvp", true);
     trustPlayers = getBool(L"trust-players", true);
     fireSpreads = getBool(L"fire-spreads", true);
@@ -92,6 +93,7 @@ bool ServerProperties::load(const wstring& path)
     motd = getString(L"motd", L"A Minecraft LCE Server");
     whiteList = getBool(L"white-list", false);
     voiceChat = getBool(L"voice-chat", false);
+    chatEnabled = getBool(L"enable-chat", false);
     levelSize = getString(L"level-size", L"large");
     advertiseLan = getBool(L"advertise-lan", true);
     serverIp = getString(L"server-ip", L"");
@@ -137,6 +139,7 @@ void ServerProperties::save(const wstring& path)
     fwprintf(f, L"motd=%ls\n", motd.c_str());
     fwprintf(f, L"white-list=%ls\n", whiteList ? L"true" : L"false");
     fwprintf(f, L"voice-chat=%ls\n", voiceChat ? L"true" : L"false");
+    fwprintf(f, L"enable-chat=%ls\n", chatEnabled ? L"true" : L"false");
     fwprintf(f, L"level-size=%ls\n", levelSize.c_str());
     fwprintf(f, L"advertise-lan=%ls\n", advertiseLan ? L"true" : L"false");
     if (!serverIp.empty())

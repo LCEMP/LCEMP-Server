@@ -24,6 +24,7 @@
 #include "../../Minecraft.World/ChunkSource.h"
 #include "ServerLogger.h"
 #include "ServerLists.h"
+#include "ServerThreadPool.h"
 #include "../Commands/ServerCommands.h"
 
 #ifdef __linux__
@@ -55,6 +56,7 @@ bool DedicatedServer::init()
     ServerLog(L"Max players: %d\n", m_properties.maxPlayers);
     ServerLog(L"Difficulty: %d\n", m_properties.difficulty);
     ServerLog(L"Level size: %s\n", m_properties.levelSize.c_str());
+    ServerLog(L"Chat: %s\n", m_properties.chatEnabled ? L"ENABLED" : L"DISABLED");
 
     ServerLists_Init(m_properties.whiteList, &m_properties);
 
@@ -66,6 +68,12 @@ bool DedicatedServer::init()
 
     extern int g_ServerMaxPlayers;
     g_ServerMaxPlayers = m_properties.maxPlayers;
+    if (g_ServerMaxPlayers < 1)
+        g_ServerMaxPlayers = 1;
+    IQNet::SetPlayerCapacity((DWORD)g_ServerMaxPlayers);
+
+    extern int g_Win64MultiplayerPort;
+    g_Win64MultiplayerPort = m_properties.serverPort;
 
     extern char g_ServerBindAddress[256];
     if (!m_properties.serverIp.empty())
@@ -134,6 +142,9 @@ bool DedicatedServer::init()
 
     WinsockNetLayer::Initialize();
 
+    ServerThreadPool::Initialize();
+    ServerLog(L"Thread pool initialized with %d worker threads\n", ServerThreadPool::GetThreadCount());
+
     app.SetGameHostOption(eGameHostOption_Difficulty, m_properties.difficulty);
     app.SetGameHostOption(eGameHostOption_GameType, m_properties.gamemode);
     app.SetGameHostOption(eGameHostOption_PvP, m_properties.pvp ? 1 : 0);
@@ -142,6 +153,7 @@ bool DedicatedServer::init()
     app.SetGameHostOption(eGameHostOption_TNT, m_properties.tntExplodes ? 1 : 0);
     app.SetGameHostOption(eGameHostOption_Structures, m_properties.structures ? 1 : 0);
     app.SetGameHostOption(eGameHostOption_Gamertags, m_properties.showGamertags ? 1 : 0);
+    app.SetGameHostOption(eGameHostOption_LevelType, m_properties.levelSize == L"flat" ? 1 : 0);
 
     Minecraft *pMinecraft = new Minecraft(NULL, NULL, NULL, 1, 1, false);
     pMinecraft->options = new Options(pMinecraft, File(L"."));
@@ -163,6 +175,7 @@ bool DedicatedServer::init()
     }
 
     app.InitGameSettings();
+    app.SetGameHostOption(eGameHostOption_ChatDisabled, m_properties.chatEnabled ? 0 : 1);
 
     if (!m_properties.serverIp.empty())
         ServerLog(L"Starting Minecraft server on %s:%d\n", m_properties.serverIp.c_str(), m_properties.serverPort);
@@ -267,13 +280,19 @@ void DedicatedServer::shutdown()
     m_running = false;
     MinecraftServer::HaltServer();
 
+    //ServerLog(L"Stopping server: shutting down thread pool\n");
+    ServerThreadPool::Shutdown();
+    //ServerLog(L"Stopping server: thread pool stopped\n");
+
     Tile::ReleaseThreadStorage();
     IntCache::ReleaseThreadStorage();
     AABB::ReleaseThreadStorage();
     Vec3::ReleaseThreadStorage();
     Level::destroyLightingCache();
 
+    //ServerLog(L"Stopping server: terminating network manager\n");
     g_NetworkManager.Terminate();
+    //ServerLog(L"Stopping server: network manager terminated\n");
     ServerLog(L"Shutdown complete\n");
 }
 

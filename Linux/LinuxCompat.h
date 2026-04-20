@@ -197,6 +197,9 @@ typedef union _LARGE_INTEGER {
 #define VK_F5        0x74
 #define VK_LSHIFT    0xA0
 #define VK_LCONTROL  0xA2
+#ifndef WHEEL_DELTA
+#define WHEEL_DELTA  120
+#endif
 
 #define VK_PAD_A                0x5800
 #define VK_PAD_B                0x5801
@@ -714,6 +717,21 @@ inline BOOL QueryPerformanceCounter(LARGE_INTEGER* v)
 inline LONGLONG InterlockedCompareExchangeRelease64(volatile LONGLONG* destination, LONGLONG exchange, LONGLONG comparand)
 {
     return __sync_val_compare_and_swap(destination, comparand, exchange);
+}
+
+inline LONG InterlockedCompareExchange(volatile LONG* destination, LONG exchange, LONG comparand)
+{
+    return __sync_val_compare_and_swap(destination, comparand, exchange);
+}
+
+inline LONG InterlockedCompareExchangeRelease(volatile LONG* destination, LONG exchange, LONG comparand)
+{
+    return __sync_val_compare_and_swap(destination, comparand, exchange);
+}
+
+inline LONG InterlockedExchange(volatile LONG* target, LONG value)
+{
+    return __sync_lock_test_and_set(target, value);
 }
 
 typedef DWORD (*LPTHREAD_START_ROUTINE)(LPVOID);
