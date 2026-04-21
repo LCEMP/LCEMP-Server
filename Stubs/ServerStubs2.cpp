@@ -774,7 +774,7 @@ void TakeAnimationParticle::render(Tesselator *, float, float, float, float, flo
 void TakeAnimationParticle::tick() {}
 int TakeAnimationParticle::getParticleTexture() { return 0; }
 
-#ifdef _WIN32
+/*#ifdef _WIN32
 void C4JStorage::SetMaxSaves(int) {}
 C4JStorage::ESaveGameState C4JStorage::GetSaveState() { return C4JStorage::ESaveGame_Idle; }
-#endif
+#endif*/
