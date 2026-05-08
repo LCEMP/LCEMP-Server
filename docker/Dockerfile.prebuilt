@@ -1,0 +1,28 @@
+# syntax=docker/dockerfile:1
+
+FROM debian:bookworm-slim AS runtime
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        libstdc++6 \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home --home-dir /home/lcemp --shell /usr/sbin/nologin lcemp \
+    && mkdir -p /data \
+    && chown -R lcemp:lcemp /data
+
+COPY build/MinecraftDedicatedServer /usr/local/bin/MinecraftDedicatedServer
+COPY Minecraft.Server/docker/entrypoint.sh /usr/local/bin/lcemp-entrypoint
+
+RUN chmod +x /usr/local/bin/MinecraftDedicatedServer /usr/local/bin/lcemp-entrypoint
+
+WORKDIR /data
+VOLUME ["/data"]
+
+EXPOSE 25565/tcp
+EXPOSE 25565/udp
+EXPOSE 25566/udp
+
+USER lcemp
+ENTRYPOINT ["lcemp-entrypoint"]
+CMD ["MinecraftDedicatedServer"]

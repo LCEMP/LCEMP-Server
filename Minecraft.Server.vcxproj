@@ -30,20 +30,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,7 +72,8 @@
     <OutDir>$(SolutionDir)x64_Server_Release\</OutDir>
     <IntDir>x64_Server_Release\</IntDir>
     <IncludePath>$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include;$(IncludePath)</IncludePath>
-  </PropertyGroup>  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Linux|x64'">
     <OutDir>$(SolutionDir)Linux_Server_Debug\</OutDir>
     <IntDir>Linux_Server_Debug\</IntDir>
     <NMakeBuildCommandLine>"$(ProjectDir)Linux\build.bat" Debug</NMakeBuildCommandLine>
@@ -93,7 +94,8 @@
     <NMakePreprocessorDefinitions>__linux__;_DEDICATED_SERVER;_CONTENT_PACKAGE;_LARGE_WORLDS;_WINDOWS64;WITH_SERVER_CODE;_CRT_NON_CONFORMING_SWPRINTFS;_CRT_SECURE_NO_WARNINGS</NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(ProjectDir)Linux;$(ProjectDir)Linux\stubs;$(ProjectDir);$(ProjectDir)\..\Minecraft.Client;$(ProjectDir)\..\Minecraft.World;$(ProjectDir)\..\Minecraft.World\x64headers;$(ProjectDir)\..\Minecraft.Client\Windows64\Iggy\include;$(ProjectDir)\..\Minecraft.Client\Xbox\Sentient\Include</NMakeIncludeSearchPath>
     <AdditionalOptions>-std=c++11</AdditionalOptions>
-  </PropertyGroup>  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>

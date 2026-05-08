@@ -1,0 +1,24 @@
+services:
+  lcemp-server:
+    build:
+      context: ../..
+      dockerfile: Minecraft.Server/docker/Dockerfile
+    image: lcemp-server:local
+    container_name: lcemp-server
+    restart: unless-stopped
+    network_mode: "host"
+    environment:
+      SERVER_PORT: "25565"
+      LEVEL_NAME: "world"
+      LEVEL_SIZE: "large"
+      GAMEMODE: "0"
+      DIFFICULTY: "2"
+      MAX_PLAYERS: "8"
+      PVP: "true"
+      MOTD: "A Minecraft LCE Server"
+      WHITE_LIST: "false"
+      VOICE_CHAT: "false"
+      ADVERTISE_LAN: "true"
+
+    volumes:
+      - ./config:/data

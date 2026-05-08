@@ -1,0 +1,4 @@
+services:
+  lcemp-server:
+    build:
+      dockerfile: Minecraft.Server/docker/Dockerfile.prebuilt
