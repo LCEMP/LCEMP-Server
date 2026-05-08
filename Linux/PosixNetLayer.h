@@ -154,6 +154,7 @@ private:
     static void* DiscoveryThreadProc(void* param);
     static void* AsyncJoinThreadProc(void* param);
     static bool ProcessRecvData(Win64RemoteConnection &conn);
+    static void MarkConnectionDisconnected(uint8_t smallId);
 
     static SOCKET s_listenSocket;
     static SOCKET s_hostConnectionSocket;
