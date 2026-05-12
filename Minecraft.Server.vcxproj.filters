@@ -832,5 +832,104 @@
     <ClCompile Include="Linux\PosixNetLayer.cpp">
       <Filter>Source Files\Linux</Filter>
     </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Storage\4J_Storage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Storage\STO_DLC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Storage\STO_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Storage\STO_SaveGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\4J_Profile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\PRO_AwardManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\PRO_Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\PRO_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\PRO_RichPresence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Profile\PRO_Sys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\4J_Render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererCBuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererCore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\RendererVertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\microprofile\microprofile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\png.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngerror.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngget.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngmem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngpread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngrio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngrtran.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngrutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngtrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngwio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngwtran.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Minecraft.Client\Platform_Libs\Dev\Render\libpng\pngwutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
